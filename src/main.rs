@@ -13,4 +13,9 @@ fn main() {
     algorithms::pattern::opposite_star_pyramid(n);
     algorithms::pattern::combined_star_pyramid(n);
     algorithms::pattern::side_triangle(n);
+    algorithms::pattern::number_base(n);
+    algorithms::pattern::left_triangle_count(n);
+    algorithms::pattern::left_triangle_alphabet(n);
+    algorithms::pattern::opposite_left_triangle_alphabet(n);
+    algorithms::pattern::same_line_alphabet_left_triangle(n);
 }
