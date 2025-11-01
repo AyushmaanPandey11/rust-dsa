@@ -18,4 +18,8 @@ fn main() {
     algorithms::pattern::left_triangle_alphabet(n);
     algorithms::pattern::opposite_left_triangle_alphabet(n);
     algorithms::pattern::same_line_alphabet_left_triangle(n);
+    algorithms::pattern::opposite_desc_triangle(n);
+    algorithms::pattern::star_box_pyramid(n);
+    algorithms::pattern::two_pyramid_combined_tip(n);
+    algorithms::pattern::mid_gap_box(n);
 }

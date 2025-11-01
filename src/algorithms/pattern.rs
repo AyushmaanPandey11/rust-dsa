@@ -132,21 +132,6 @@ pub fn side_triangle(n : i32){
     }
 }
 
-pub fn number_base(n : i32){
-    for row in 0..n{
-        for col in 0..row {
-            print!("{}",col+1);
-        }
-        for _ in 0..2*(n-row-1) {
-            print!(" ");
-        }
-        for col in 0..row {
-            print!("{}",row-col);
-        }
-        println!();
-    }
-}
-
 pub fn left_triangle_count(n : i32){
     let mut  _count = 1;
     for row in 0..n+1{
@@ -182,6 +167,111 @@ pub fn same_line_alphabet_left_triangle(n : i32){
     for row in 0..n{
         for _ in 0..row+1 {
             print!("{} ",(b'A' + row as u8) as char );
+        }
+        println!();
+    }
+}
+
+pub fn number_base(n : i32){
+    for row in 0..n{
+        for col in 0..row {
+            print!("{}",col+1);
+        }
+        for _ in 0..2*(n-row-1) {
+            print!(" ");
+        }
+        for col in 0..row {
+            print!("{}",row-col);
+        }
+        println!();
+    }
+}
+
+pub fn opposite_desc_triangle(n : i32){
+    for row in 0..n+1 {
+        for col in 0..row {
+            print!("{} ", (b'A' + (n - row + col) as u8) as char )
+        }
+        println!();
+    }
+}
+
+pub fn star_box_pyramid(n : i32){
+    for row in 0..n {
+        for _ in 0..n-row{
+            print!("*");
+        }
+        for _ in 0..2*(row){
+            print!(" ");
+        }
+        for _ in 0..n-row {
+            print!("*");
+        }
+        println!();
+    }
+    for row in 0..n {
+        for _ in 0..row+1{
+            print!("*");
+        }
+        for _ in 0..2*(n-row-1){
+            print!(" ");
+        }
+        for _ in 0..row+1 {
+            print!("*");
+        }
+        println!();
+    }
+}
+
+pub fn two_pyramid_combined_tip(n : i32){
+    for row in 0..n {
+        for _ in 0..row+1{
+            print!("*");
+        }
+        for _ in 0..2*(n-row-1){
+            print!(" ");
+        }
+        for _ in 0..row+1 {
+            print!("*");
+        }
+        println!();
+    }
+    for row in 0..n {
+        for _ in 0..n-row{
+            print!("*");
+        }
+        for _ in 0..2*(row){
+            print!(" ");
+        }
+        for _ in 0..n-row {
+            print!("*");
+        }
+        println!();
+    }
+}
+
+pub fn mid_gap_box(n : i32){
+    for row in 0..n/2+1 {
+        for _ in  0..row {
+            print!("*");
+        }
+        for _ in 0..row {
+            print!(" ")
+        }
+        for _   in 0..n/2 - row {
+            print!("*");
+        }
+        println!();
+    }
+    for row in 0..n/2+1 {
+        for _ in  0..row {
+            print!("*");
+        }
+        for _ in 0..row {
+            print!(" ")
+        }
+        for _   in 0..n/2 - row {
+            print!("*");
         }
         println!();
     }
