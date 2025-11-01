@@ -22,4 +22,5 @@ fn main() {
     algorithms::pattern::star_box_pyramid(n);
     algorithms::pattern::two_pyramid_combined_tip(n);
     algorithms::pattern::mid_gap_box(n);
+    algorithms::pattern::number_ring(n);
 }

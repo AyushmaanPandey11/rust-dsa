@@ -251,27 +251,28 @@ pub fn two_pyramid_combined_tip(n : i32){
 }
 
 pub fn mid_gap_box(n : i32){
-    for row in 0..n/2+1 {
-        for _ in  0..row {
-            print!("*");
-        }
-        for _ in 0..row {
-            print!(" ")
-        }
-        for _   in 0..n/2 - row {
-            print!("*");
+    for row in 0..n {
+        for col in 0..n {
+            if row == 0 || col == 0 || row == n-1 || col == n-1 {
+                print!("*");
+            }
+            else {
+                print!(" ");
+            }
         }
         println!();
     }
-    for row in 0..n/2+1 {
-        for _ in  0..row {
-            print!("*");
-        }
-        for _ in 0..row {
-            print!(" ")
-        }
-        for _   in 0..n/2 - row {
-            print!("*");
+}
+
+pub fn number_ring(n : i32){
+    for row in 0..2*n-1 {
+        for col in 0..2*n-1 {
+            let top = row;
+            let left = col;
+            let right = 2*n-2 - col;
+            let down = 2*n-2 - row;
+            let numb = std::cmp::min(std::cmp::min(top,down), std::cmp::min(left,right));
+            print!("{} ",n - numb);
         }
         println!();
     }
