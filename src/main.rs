@@ -1,8 +1,9 @@
+use crate::algorithms::recursion;
+
 mod algorithms; 
 
 fn main() {
     let n = 5;
-    println!("Pattern 1 ({}x{}):", n, n);
     algorithms::pattern::box_pattern(n);
     algorithms::pattern::triangle_pattern(n);
     algorithms::pattern::number_triangle(n);
@@ -23,4 +24,12 @@ fn main() {
     algorithms::pattern::two_pyramid_combined_tip(n);
     algorithms::pattern::mid_gap_box(n);
     algorithms::pattern::number_ring(n);
+
+    // recursion 
+    println!("Sum using recursion: {}",recursion::sum_recursion(n, 0));
+    println!("Factorial using recursion: {}",recursion::factorial(n));
+    print!("Print descreasing number:");recursion::descreasing_order(n);
+    println!();
+    println!("Fibonacci 5th number value: {}",recursion::fibonacci_numbers(n));
+    println!("Find palindrome of string Malayalam: {}",recursion::is_palindrome(String::from("Malayalam")));
 }
