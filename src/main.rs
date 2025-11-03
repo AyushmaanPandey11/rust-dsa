@@ -4,6 +4,7 @@ mod algorithms;
 
 fn main() {
     let n = 5;
+    let mut arr = vec![1,8,2,4,9,9];
     algorithms::pattern::box_pattern(n);
     algorithms::pattern::triangle_pattern(n);
     algorithms::pattern::number_triangle(n);
@@ -32,4 +33,14 @@ fn main() {
     println!();
     println!("Fibonacci 5th number value: {}",recursion::fibonacci_numbers(n));
     println!("Find palindrome of string Malayalam: {}",recursion::is_palindrome(String::from("Malayalam")));
+
+    // array
+    println!("largest element in the array is: {}",algorithms::array::largest_element_in_array( &arr)); 
+    println!("second largest element in the array is: {}",algorithms::array::second_largest_element(&arr)); 
+    println!("checking if the array is sorted: {}",algorithms::array::check_if_arr_sorted(&arr));
+    print!("Removing duplicated elements from array: "); 
+    let last_index = algorithms::array::remove_duplicate_array(&mut arr);
+    for value in 0..last_index {
+        print!("{} ", arr[value])
+    }
 }
