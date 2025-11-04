@@ -55,3 +55,29 @@ pub fn remove_duplicate_array( arr:  & mut Vec<i32> ) -> usize {
     }
     return first+1;
 }
+
+pub fn rotate_array_d_places(arr: &mut Vec<i32>, d: i32) {
+    if arr.len() == 0 {
+        return ;
+    }
+    let len = arr.len();
+    let k = (d as usize) % len ;
+
+    arr[..len-k].reverse();
+    arr[len-k..].reverse();
+    arr.reverse();
+}
+
+pub fn move_zeroes_to_end( arr:  &mut Vec<i32> ) -> &mut Vec<i32> {
+    if arr.len() == 0 {
+        return arr;
+    }
+    let mut zeroidx = 0;
+    for idx in 0..arr.len() {
+        if arr[idx] != 0 {
+            arr.swap(zeroidx,idx);
+            zeroidx = zeroidx + 1;
+        }
+    }
+    return arr;
+}

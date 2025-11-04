@@ -42,5 +42,20 @@ fn main() {
     let last_index = algorithms::array::remove_duplicate_array(&mut arr);
     for value in 0..last_index {
         print!("{} ", arr[value])
+    } 
+
+    println!();
+    print!("rotating array by 2 places : "); 
+    algorithms::array::rotate_array_d_places(&mut arr, 2);
+    for value in arr {
+        print!("{} ", value)
+    }
+
+    println!();
+    let mut v = vec![1, 0, 2, 0, 5, 0];
+    print!("moving zeroes to right end : "); 
+    let v = algorithms::array::move_zeroes_to_end(&mut v);
+    for value in v {
+        print!("{} ", value)
     }
 }
