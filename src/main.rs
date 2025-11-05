@@ -58,4 +58,7 @@ fn main() {
     for value in v {
         print!("{} ", value)
     }
+    println!();
+    println!("maximum consecutive ones are: {}",algorithms::array::max_consecutive_ones(&vec![1,1,1,0,1,1,1,1,1]));    
+    println!("Number with one count is: {}",algorithms::array::single_number(vec![1,1,1,0,1,1,1,1,1]));  
 }

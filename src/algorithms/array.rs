@@ -1,4 +1,4 @@
-use std::i32;
+use std::{cmp, collections::HashMap, i32};
 
 pub fn largest_element_in_array( arr: &[i32] ) -> i32 { 
     if arr.len() == 0 {
@@ -80,4 +80,36 @@ pub fn move_zeroes_to_end( arr:  &mut Vec<i32> ) -> &mut Vec<i32> {
         }
     }
     return arr;
+}
+
+pub fn max_consecutive_ones(arr: &[i32]) -> i32 {
+    if arr.len() == 0 {
+        return 0;
+    }
+    let mut ans = i32::MIN;
+    let mut count = 0;
+
+    for &value in arr {
+        if value == 1 {
+            count = count +1;
+        }
+        else if value != 1 {
+            count = 0;
+        }
+        ans = cmp::max(ans, count);
+    }
+    return ans;
+}
+
+pub fn single_number(nums: Vec<i32>) -> i32 {
+    let mut count_map = HashMap::new();
+    for value in nums {
+        *count_map.entry(value).or_insert(0) += 1;
+    }
+    for (num,value) in count_map {
+        if value == 1 {
+            return num;
+        }
+    }        
+    return -1;
 }
