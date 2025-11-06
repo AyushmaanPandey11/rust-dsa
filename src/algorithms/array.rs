@@ -113,3 +113,24 @@ pub fn single_number(nums: Vec<i32>) -> i32 {
     }        
     return -1;
 }
+
+pub fn largest_arr_with_given_sum( nums: Vec<i32>, k: i32 ) -> i32{
+    let (mut left,mut right) = (0,0);
+    let mut sum= nums[0];
+    let mut max_len = 0;
+
+    while right < nums.len() {
+        while left <= right && sum > k {
+            sum -= nums[left];
+            left += 1;
+        }
+        if sum == k {
+            max_len  = cmp::max(max_len, right - left +1);
+        }
+        right = right+1;
+        if right < nums.len() {
+            sum = sum + nums[right];
+        }
+    }
+    max_len as i32
+}

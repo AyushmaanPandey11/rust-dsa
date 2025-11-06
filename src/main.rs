@@ -61,4 +61,5 @@ fn main() {
     println!();
     println!("maximum consecutive ones are: {}",algorithms::array::max_consecutive_ones(&vec![1,1,1,0,1,1,1,1,1]));    
     println!("Number with one count is: {}",algorithms::array::single_number(vec![1,1,1,0,1,1,1,1,1]));  
+    println!("maxinum sub-array length with sum 10 is: {}",algorithms::array::largest_arr_with_given_sum(vec![2,4,4,1,9],10));  
 }
