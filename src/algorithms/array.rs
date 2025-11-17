@@ -134,3 +134,32 @@ pub fn largest_arr_with_given_sum( nums: Vec<i32>, k: i32 ) -> i32{
     }
     max_len as i32
 }
+
+// pub fn largest_subarray_with_sum_pos_neg(nums: Vec<i32>, k: i32) -> i32 {
+    
+// }
+
+pub fn two_sum_problem( mut nums: Vec<i32>, k : i32 ) -> bool {
+    if nums.len() == 0 {
+        return true;
+    }
+    nums.sort();
+    let size = nums.len() - 1;
+    let (mut start, mut end) = (0, size);
+    let mut sum = 0;
+    while start < end {
+        sum = nums[start] + nums[end];
+        if sum == k {
+            return true;
+        }
+        else if sum > k {
+            end = end-1;
+        }
+        else {
+            start = start +1;
+        }
+    }
+    return false;
+}
+
+pub fn sort_zeroes_one
