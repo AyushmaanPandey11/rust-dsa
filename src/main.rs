@@ -5,6 +5,7 @@ mod algorithms;
 fn main() {
     let n = 5;
     let mut arr = vec![1,8,2,4,9,9];
+    let mut arr2 = vec![2,2,0,1,0,1];
     algorithms::pattern::box_pattern(n);
     algorithms::pattern::triangle_pattern(n);
     algorithms::pattern::number_triangle(n);
@@ -62,5 +63,10 @@ fn main() {
     println!("maximum consecutive ones are: {}",algorithms::array::max_consecutive_ones(&vec![1,1,1,0,1,1,1,1,1]));    
     println!("Number with one count is: {}",algorithms::array::single_number(vec![1,1,1,0,1,1,1,1,1]));  
     println!("maxinum sub-array length with sum 10 is: {}",algorithms::array::largest_arr_with_given_sum(vec![2,4,4,1,9],10));  
-    println!("is sum of two element is present is given array: {}", algorithms::array::two_sum_problem(vec![2,4,4,1,9],10))
+    println!("is sum of two element is present is given array: {}", algorithms::array::two_sum_problem(vec![2,4,4,1,9],10));
+    algorithms::array::sort_ones_zeros_twos( &mut arr2);
+    for value in arr2 {
+        print!("{} ", value)
+    }
+    println!();
 }

@@ -1,4 +1,4 @@
-use std::{cmp, collections::HashMap, i32};
+use std::{cmp, collections::HashMap, i32, mem};
 
 pub fn largest_element_in_array( arr: &[i32] ) -> i32 { 
     if arr.len() == 0 {
@@ -135,9 +135,6 @@ pub fn largest_arr_with_given_sum( nums: Vec<i32>, k: i32 ) -> i32{
     max_len as i32
 }
 
-// pub fn largest_subarray_with_sum_pos_neg(nums: Vec<i32>, k: i32) -> i32 {
-    
-// }
 
 pub fn two_sum_problem( mut nums: Vec<i32>, k : i32 ) -> bool {
     if nums.len() == 0 {
@@ -162,4 +159,36 @@ pub fn two_sum_problem( mut nums: Vec<i32>, k : i32 ) -> bool {
     return false;
 }
 
-pub fn sort_zeroes_one
+pub fn sort_ones_zeros_twos(nums: &mut Vec<i32>) {
+    if nums.len() == 0 {
+        return ;
+    }
+    let ( mut low, mut mid, mut high ) = ( 0, 0, nums.len() - 1 );
+
+    while mid <= high {
+        match nums[mid] {
+            0 => {
+                if low != mid {
+                    let ( left, right ) = nums.split_at_mut(mid);
+                    mem::swap(&mut left[low],&mut right[0]);
+                }
+                low += 1;
+                mid += 1;        
+            }
+            1 => {
+                mid += 1;
+            }
+            2 => {
+                if mid != high {
+                    let ( left, right ) = nums.split_at_mut(high);
+                    mem::swap(&mut left[mid],&mut right[0]);
+                }
+                if high == 0 {
+                    break;
+                }
+                high -= 1; 
+            }
+            _ => {}
+        }
+        }
+}
